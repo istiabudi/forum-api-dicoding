@@ -32,6 +32,14 @@ class CommentRepositoryPostgres extends CommentRepository {
      * Method ini harus mengembalikan `true` jika komentar sudah tersedia dan
      * mengembalikan `false` jika komentar belum tersedia.
      */
+    const query = {
+      text: 'SELECT id FROM comments WHERE id = $1',
+      values: [commentId],
+    };
+
+    const result = await this._pool.query(query);
+
+    return result.rowCount > 0;
   }
 
   async isCommentOwner(commentId, owner) {

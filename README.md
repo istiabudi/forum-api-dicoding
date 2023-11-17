@@ -19,7 +19,7 @@ Berikut adalah lokasi dari TODO-nya.
 3. TODO 3: Berada di berkas `src/Applications/use_case/_test/AddThreadUseCase.test.js`DONE
 4. TODO 4: Berada di berkas `src/Infrastructures/repository/_test/ThreadRepositoryPostgres.test.js`DONE
 5. TODO 5: Berada di berkas `src/Domains/comments/entities/NewComment.js`DONE
-6. TODO 6: Berada di berkas `src/Domains/comments/CommentRepository.js`
-7. TODO 7: Berada di berkas `src/Applications/use_case/AddCommentUseCase.js`
-8. TODO 8: Berada di berkas `src/Infrastructures/repository/CommentRepositoryPostgres.js`
-9. TODO 9: Berada di berkas `src/Interfaces/http/api/comments/handler.js`
+6. TODO 6: Berada di berkas `src/Domains/comments/CommentRepository.js`DONE
+7. TODO 7: Berada di berkas `src/Applications/use_case/AddCommentUseCase.js`DONE
+8. TODO 8: Berada di berkas `src/Infrastructures/repository/CommentRepositoryPostgres.js`DONE
+9. TODO 9: Berada di berkas `src/Interfaces/http/api/comments/handler.js`DONE

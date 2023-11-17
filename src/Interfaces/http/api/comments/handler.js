@@ -42,7 +42,7 @@ class CommentsHandler {
      * Untuk mendapatkan useCase, pastikan Anda memanfaatkan method `this._container.getInstance`
      */
     const useCase = this._container.getInstance(DeleteCommentUseCase.name);
-    await useCase.execute({ owner, threadId, commentId });
+    await useCase.execute({ owner, threadId, id });
 
     return {
       status: 'success',

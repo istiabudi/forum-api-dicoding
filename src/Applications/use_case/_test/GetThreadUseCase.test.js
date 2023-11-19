@@ -39,6 +39,13 @@ describe('GetThreadUseCase', () => {
         content: 'sebuah comment',
         isDelete: false,
       }),
+      new Comment({
+        id: 'comment-213',
+        username: 'dicoding',
+        date: new Date().toISOString(),
+        content: 'sebuah comment',
+        isDelete: true,
+      }),
     ];
 
     mockThreadRepository.getThreadById = jest.fn(() => Promise.resolve(mockThread));
@@ -58,10 +65,13 @@ describe('GetThreadUseCase', () => {
     expect(thread.body).toEqual('sebuah body thread');
     expect(thread.date).toBeDefined();
     expect(thread.username).toEqual('dicoding');
-    expect(thread.comments).toHaveLength(1);
+    expect(thread.comments).toHaveLength(2);
     expect(thread.comments[0].id).toEqual('comment-123');
     expect(thread.comments[0].username).toEqual('dicoding');
     expect(thread.comments[0].content).toEqual('sebuah comment');
+    expect(thread.comments[1].id).toEqual('comment-213');
+    expect(thread.comments[1].username).toEqual('dicoding');
+    expect(thread.comments[1].content).toEqual('**komentar telah dihapus**');
 
     // validate mock function call
     expect(mockThreadRepository.getThreadById).toBeCalledWith('thread-123');

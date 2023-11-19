@@ -26,19 +26,11 @@ class AddCommentUseCase {
       threadId: useCasePayload.threadId,
       owner: useCasePayload.owner,
     });
-    // this._checkThreadId(useCasePayload.threadId);
     const thread = await this._threadRepository.isThreadExist(useCasePayload.threadId);
     if (thread) {
       return this._commentRepository.addComment(newComment);
     }
     throw new Error('ADD_COMMENT_USE_CASE.THREAD_NOT_FOUND');
-  }
-
-  async _checkThreadId(threadId) {
-    const isThread = await this._threadRepository.isThreadExist(threadId);
-    if (isThread) {
-      throw new Error('ADD_COMMENT_USE_CASE.THREAD_NOT_FOUND');
-    }
   }
 }
 

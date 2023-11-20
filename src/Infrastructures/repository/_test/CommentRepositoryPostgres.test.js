@@ -146,9 +146,18 @@ describe('CommentRepositoryPostgres', () => {
 
       // Assert
       expect(comments).toHaveLength(3);
-      expect(comments[0].id).toEqual('comment-123');
+      expect(comments[0].id).toEqual('comment-789');
+      expect(comments[0].content).toEqual('some comment');
+      expect(comments[0].username).toEqual('dicoding');
+      expect(comments[0].date).toEqual(new Date('2023-11-20T00:00:00.000Z').toISOString());
       expect(comments[1].id).toEqual('comment-456');
-      expect(comments[2].id).toEqual('comment-789');
+      expect(comments[1].content).toEqual('some comment');
+      expect(comments[1].username).toEqual('dicoding');
+      expect(comments[1].date).toEqual(new Date('2023-11-20T00:00:00.000Z').toISOString());
+      expect(comments[2].id).toEqual('comment-123');
+      expect(comments[2].content).toEqual('some comment');
+      expect(comments[2].username).toEqual('dicoding');
+      expect(comments[2].date).toEqual(new Date('2023-11-20T00:00:00.000Z').toISOString());
     });
   });
 });

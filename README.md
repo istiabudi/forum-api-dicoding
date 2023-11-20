@@ -23,3 +23,5 @@ Berikut adalah lokasi dari TODO-nya.
 7. TODO 7: Berada di berkas `src/Applications/use_case/AddCommentUseCase.js`DONE
 8. TODO 8: Berada di berkas `src/Infrastructures/repository/CommentRepositoryPostgres.js`DONE
 9. TODO 9: Berada di berkas `src/Interfaces/http/api/comments/handler.js`DONE
+
+Revisied

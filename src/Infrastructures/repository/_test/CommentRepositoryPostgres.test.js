@@ -133,11 +133,11 @@ describe('CommentRepositoryPostgres', () => {
       // Arrange
       await UsersTableTestHelper.addUser({ id: 'user-123' });
       await ThreadsTableTestHelper.addThread({ id: 'thread-123' });
-      await CommentsTableTestHelper.addComment({ id: 'comment-123', threadId: 'thread-123' });
+      await CommentsTableTestHelper.addComment({ id: 'comment-123', threadId: 'thread-123', date: new Date('2023-11-20T00:00:00.000Z') });
       await wait(250);
-      await CommentsTableTestHelper.addComment({ id: 'comment-456', threadId: 'thread-123' });
+      await CommentsTableTestHelper.addComment({ id: 'comment-456', threadId: 'thread-123', date: new Date('2023-11-21T00:00:00.000Z') });
       await wait(250);
-      await CommentsTableTestHelper.addComment({ id: 'comment-789', threadId: 'thread-123' });
+      await CommentsTableTestHelper.addComment({ id: 'comment-789', threadId: 'thread-123', date: new Date('2023-11-22T00:00:00.000Z') });
 
       const commentRepositoryPostgres = new CommentRepositoryPostgres(pool, {});
 
@@ -153,11 +153,11 @@ describe('CommentRepositoryPostgres', () => {
       expect(comments[1].id).toEqual('comment-456');
       expect(comments[1].content).toEqual('some comment');
       expect(comments[1].username).toEqual('dicoding');
-      expect(comments[1].date).toEqual(new Date('2023-11-20T00:00:00.000Z').toISOString());
+      expect(comments[1].date).toEqual(new Date('2023-11-21T00:00:00.000Z').toISOString());
       expect(comments[2].id).toEqual('comment-789');
       expect(comments[2].content).toEqual('some comment');
       expect(comments[2].username).toEqual('dicoding');
-      expect(comments[2].date).toEqual(new Date('2023-11-20T00:00:00.000Z').toISOString());
+      expect(comments[2].date).toEqual(new Date('2023-11-22T00:00:00.000Z').toISOString());
     });
   });
 });

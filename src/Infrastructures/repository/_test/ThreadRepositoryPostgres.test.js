@@ -40,8 +40,8 @@ describe('ThreadRepositoryPostgres', () => {
       expect(addedThread).toStrictEqual(new AddedThread({
         id: 'thread-123',
         title: 'thread title',
-        owner: 'user-123'
-      }))
+        owner: 'user-123',
+      }));
       expect(getThread).toHaveLength(1);
     });
   });
